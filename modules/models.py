@@ -18,6 +18,7 @@ class Module(models.Model):
     url_video = models.URLField(verbose_name='ссылка на видео', **NULLABLE)
     last_update = models.DateField(auto_now=True, verbose_name='последнее обновление')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='владелец')
+    is_published = models.BooleanField(default=True, verbose_name='опубликован')
 
     def save(self, *args, **kwargs):
         """ Сохранение порядкового номера """
@@ -28,3 +29,11 @@ class Module(models.Model):
             else:
                 self.serial_number = 1
         super(Module, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'модуль'
+        verbose_name_plural = 'модули'
+        ordering = ('serial_number',)
