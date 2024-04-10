@@ -11,7 +11,7 @@
 1. клонировать репозиторий: `git clone https://github.com/valeradyomin/tb2_educational_modules` 
 2. установить виртуальную среду: `python -m venv .venv`
 3. активировать виртуальную среду(Windows): `.venv\Scripts\Activate.ps1`
-4. активировать виртуальную среду(Linux): `.venv/bin/activate`
+4. активировать виртуальную среду(Linux): `source .venv/bin/activate`
 5. установить зависимости: `pip install -r requirements.txt`
 6. используйте `.env_sample` как образец для создания `.env` , чтобы настроить переменные окружения
 7. установить PostgreSQL: `sudo apt-get install postgresql postgresql-contrib` и `sudo systemctl start postgresql`
