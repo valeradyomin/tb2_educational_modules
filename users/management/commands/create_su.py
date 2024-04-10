@@ -6,6 +6,7 @@ from users.models import User, UserRoles
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
+        """ Создает пользователя супервайзера """
         user = User.objects.create(
             email=settings.ROOT_EMAIL,
             first_name='root',
